@@ -61,3 +61,7 @@ body {
     background-color: #eee;
   }
   
+  .input {
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }

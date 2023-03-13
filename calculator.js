@@ -3,6 +3,11 @@ export class Calculator {
       this.display = display;
       this.clear();
     }
+
+    back() {
+        this.input = this.input.slice(0, -1);
+        this.updateDisplay()
+    }
     
     clear() {
       this.input = '';

@@ -7,6 +7,7 @@ const numberButtons = document.querySelectorAll('.number');
 const operatorButtons = document.querySelectorAll('.operator');
 const clearButton = document.querySelector('.clear');
 const equalsButton = document.querySelector('.equals');
+const backButton = document.querySelector('.back');
 
 numberButtons.forEach(button => {
   button.addEventListener('click', () => {
@@ -29,3 +30,7 @@ clearButton.addEventListener('click', () => {
 equalsButton.addEventListener('click', () => {
   calculator.calculate();
 });
+
+backButton.addEventListener('click', () => {
+    calculator.back();
+  });
