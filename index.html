@@ -8,28 +8,30 @@
 </head>
 <body>
     <h1>Basic Calculator</h1>
-    <input type="text" id="display" disabled/>
-    <br>
-    <button onclick="addToDisplay('1')">1</button>
-    <button onclick="addToDisplay('2')">2</button>
-    <button onclick="addToDisplay('3')">3</button>
-    <button onclick="addOperator('+')">+</button>
-    <br>
-    <button onclick="addToDisplay('4')">4</button>
-    <button onclick="addToDisplay('5')">5</button>
-    <button onclick="addToDisplay('6')">6</button>
-    <button onclick="addOperator('-')">-</button>
-    <br>
-    <button onclick="addToDisplay('7')">7</button>
-    <button onclick="addToDisplay('8')">8</button>
-    <button onclick="addToDisplay('9')">9</button>
-    <button onclick="addOperator('*')">*</button>
-    <br>
-    <button onclick="clearDisplay()">Clear</button>
-    <button onclick="addToDisplay('0')">0</button>
-    <button onclick="addOperator('/')">/</button>
-    <button onclick="calculate()">=</button>
-    <br>
-<script src="app.js"></script>
+  <input type="text" id="calculator-display">
+  <br>
+<div id="calculator-buttons">
+  <button class="number" value="7">7</button>
+  <button class="number" value="8">8</button>
+  <button class="number" value="9">9</button>
+  <button class="operator" value="+">+</button>
+  <br>
+  <button class="number" value="4">4</button>
+  <button class="number" value="5">5</button>
+  <button class="number" value="6">6</button>
+  <button class="operator" value="-">-</button>
+  <br>
+  <button class="number" value="1">1</button>
+  <button class="number" value="2">2</button>
+  <button class="number" value="3">3</button>
+  <button class="operator" value="*">*</button>
+  <br>
+  <button class="number" value="0">0</button>
+  <button class="operator" value="/">/</button>
+  <button class="clear" value="C">C</button>
+  <button class="equals" value="=">=</button>
+</div>
+<script type="module" src="app.js"></script>
+      
 </body>
 </html>
