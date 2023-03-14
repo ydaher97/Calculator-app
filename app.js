@@ -1,5 +1,6 @@
 import { Calculator } from './calculator.js';
 let operator = 0;
+let digit = 0;
 
 const calculatorDisplay = document.getElementById('calculator-display');
 const calculator = new Calculator(calculatorDisplay);
@@ -13,24 +14,26 @@ const backButton = document.querySelector('.back');
 numberButtons.forEach(button => {
   button.addEventListener('click', () => {
     calculator.addToInput(button.value);
+    digit++;
     console.log("button");
   });
 });
 
 operatorButtons.forEach(button => {
   button.addEventListener('click', () => {
-    calculator.addOperator(button.value);
-    calculator.calculateLongExpression();
-    operator++;
-    if (operator > 1) {
+    console.log(operator)
+    console.log(digit)
+    if (digit > 0 && operator < 1) {
       calculator.addOperator(button.value);
-      operator--;
+      calculator.calculateLongExpression();
+      operator++;
+      console.log("op");
     }
-    console.log("op");
   });
 });
 
 clearButton.addEventListener('click', () => {
+  digit = 0;
   operator = 0;
   calculator.clear();
 });
@@ -38,8 +41,15 @@ clearButton.addEventListener('click', () => {
 equalsButton.addEventListener('click', () => {
   calculator.calculate();
   operator = 0;
+  digit = 1;
 });
 
 backButton.addEventListener('click', () => {
+  const display = calculatorDisplay.value;
+  if ((/\d/).test(display[display.length-1])) {
+    digit--;
+  } else {
+    operator = 0;
+  }
     calculator.back();
   });
