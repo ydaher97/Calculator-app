@@ -71,9 +71,12 @@ export class Calculator {
     
     divide(a, b) {
       if (b === 0) {
-        throw new Error("Division by zero");
-      } else {
-        return a / b;
+        throw alert (`Cannot divide ${b} by 0`);
+      } else if (a===0 && b === 0) {
+        throw alert("Cannot divide 0 by 0");
+      }
+        else {
+          return a / b;
       }
     }
   }
