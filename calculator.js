@@ -45,17 +45,35 @@ export class Calculator {
       }
     }
     
+    calculateLongExpression() {
+      let calc = this.calculateLongExpression.called = true;
+      let expression = this.input.split(/\d/);
+      let operators = [];
+      let values = this.input.split(/[-+*/]/);
+      let result = parseFloat(values[0]);
+      for (let op in expression) {
+        if (expression[op]) {
+          operators.push(expression[op]);
+        }
+      }
+      if (operators.length > 1) {
+        this.operator = operators[0];
+        this.calculate();
+      }
+    }
+
     calculate() {
       let values = this.input.split(/[-+*/]/);
       let result = parseFloat(values[0]);
-    
+
       for (let i = 0; i < this.operator.length; i++) {
+        console.log(this.operator[i])
         let op = this.operator[i];
         let a = parseFloat(values[i]);
         let b = parseFloat(values[i+1]);
         result = this.operate(op, result, b);
       }
-    
+
       this.result = result;
       this.input = this.result.toString();
       this.operator = '';
