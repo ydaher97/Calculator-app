@@ -1,0 +1,63 @@
+/* Set default font family and size */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+  }
+  
+  /* Style calculator display */
+  #calculator-display {
+    width: 100%;
+    height: 50px;
+    font-size: 24px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+  
+  /* Style calculator buttons container */
+  #calculator-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+  }
+  
+  /* Style calculator buttons */
+  button {
+    width: 100%;
+    height: 50px;
+    font-size: 24px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  /* Style number buttons */
+  .number {
+    color: #333;
+  }
+  
+  /* Style operator buttons */
+  .operator {
+    color: #fff;
+    background-color: #333;
+  }
+  
+  /* Style clear button */
+  .clear {
+    color: #fff;
+    background-color: #f44336;
+  }
+  
+  /* Style equals button */
+  .equals {
+    color: #fff;
+    background-color: #4caf50;
+  }
+  
+  /* Hover effect for buttons */
+  button:hover {
+    background-color: #eee;
+  }
+  
