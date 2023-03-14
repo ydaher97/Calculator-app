@@ -42,5 +42,4 @@ equalsButton.addEventListener('click', () => {
 
 backButton.addEventListener('click', () => {
     calculator.back();
-    operator = 0;
   });
