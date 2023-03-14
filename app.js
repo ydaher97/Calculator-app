@@ -21,12 +21,9 @@ numberButtons.forEach(button => {
 
 operatorButtons.forEach(button => {
   button.addEventListener('click', () => {
-    if (digit > 0 && operator < 1) {
-      calculator.addOperator(button.value);
-      calculator.calculateLongExpression();
-      operator++;
-      console.log("op");
-    }
+    calculator.calculate();
+    calculator.addOperator(button.value);
+    console.log("op");
   });
 });
 
@@ -49,5 +46,5 @@ backButton.addEventListener('click', () => {
   } else {
     operator = 0;
   }
-  calculator.back();
+    calculator.back();
   });
