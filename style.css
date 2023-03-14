@@ -21,11 +21,11 @@ main {
 /* Calculator Display Style*/
 @keyframes borderFlash {
   from {
-    border: solid 3px #cc1b1b;
+    border: solid 1px #cc1b1b;
   }
 
   to {
-    border: solid 2px #333;
+    border: solid 1px #333;
   }
 }
 
@@ -35,10 +35,11 @@ main {
   text-align: left;
   font-size: 24px;
   padding: 10px;
-  border: solid 2px #cc1b1b;
+  border: solid 1px #cc1b1b;
   animation-name: borderFlash;
   animation-duration: 1s;
   animation-iteration-count: infinite;
+  color: #000000;
 }
 
 #calculator-display:focus {
