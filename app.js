@@ -21,8 +21,6 @@ numberButtons.forEach(button => {
 
 operatorButtons.forEach(button => {
   button.addEventListener('click', () => {
-    console.log(operator)
-    console.log(digit)
     if (digit > 0 && operator < 1) {
       calculator.addOperator(button.value);
       calculator.calculateLongExpression();
@@ -51,5 +49,5 @@ backButton.addEventListener('click', () => {
   } else {
     operator = 0;
   }
-    calculator.back();
+  calculator.back();
   });

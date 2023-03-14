@@ -67,7 +67,6 @@ export class Calculator {
       let result = parseFloat(values[0]);
 
       for (let i = 0; i < this.operator.length; i++) {
-        console.log(this.operator[i])
         let op = this.operator[i];
         let a = parseFloat(values[i]);
         let b = parseFloat(values[i+1]);
