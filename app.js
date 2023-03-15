@@ -21,8 +21,16 @@ numberButtons.forEach(button => {
 
 operatorButtons.forEach(button => {
   button.addEventListener('click', () => {
-    calculator.calculate();
-    calculator.addOperator(button.value);
+    console.log(operator)
+    if (operator == 0) {
+      calculator.addOperator(button.value);
+      operator++;
+    } 
+    else if (operator == 1 && digit > 1){
+      calculator.calculate();
+      calculator.addOperator(button.value);   
+      digit--;
+    }
     console.log("op");
   });
 });
