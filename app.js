@@ -22,7 +22,7 @@ numberButtons.forEach(button => {
 operatorButtons.forEach(button => {
   button.addEventListener('click', () => {
     console.log(operator)
-    if (operator == 0) {
+    if (operator == 0 && digit > 0) {
       calculator.addOperator(button.value);
       operator++;
     } 
