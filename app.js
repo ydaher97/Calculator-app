@@ -14,19 +14,24 @@ const backButton = document.querySelector(".back");
 numberButtons.forEach((button) => {
   button.addEventListener("click", () => {
     calculator.addToInput(button.value);
-    digit++;
+    digit = 1;
     console.log("button");
   });
 });
 
-operatorButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    if (digit > 0 && operator < 1) {
+operatorButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    if (operator == 0 && digit == 1) {
       calculator.addOperator(button.value);
-      calculator.calculateLongExpression();
-      operator++;
-      console.log("op");
+      operator = 1;
+      digit = 0;
+    } 
+    else if (operator == 1 && digit == 1){
+      calculator.calculate();
+      calculator.addOperator(button.value);   
+      digit = 0;
     }
+    console.log("op");
   });
 });
 
@@ -44,11 +49,15 @@ equalsButton.addEventListener("click", () => {
 
 backButton.addEventListener("click", () => {
   const display = calculatorDisplay.value;
-  if (display[display.length - 1].match(/\d/)) {
-    digit--;
+  if ((display[display.length-1]).match(/\d/)) {
+    if ((display[display.length-2].match(/\d/))) {
+      digit = 1;
+    } else {
+      digit = 0;
+    }
   } else {
     operator = 0;
+    digit = 1;
   }
-  calculator.back();
-});
-
+    calculator.back();
+  });
