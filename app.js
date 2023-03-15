@@ -51,7 +51,7 @@ equalsButton.addEventListener('click', () => {
 backButton.addEventListener('click', () => {
   const display = calculatorDisplay.value;
   if ((display[display.length-1]).match(/\d/)) {
-    digit--;
+    digit = 0;
   } else {
     operator = 0;
   }
