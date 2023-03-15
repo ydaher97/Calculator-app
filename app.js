@@ -14,22 +14,23 @@ const backButton = document.querySelector('.back');
 numberButtons.forEach(button => {
   button.addEventListener('click', () => {
     calculator.addToInput(button.value);
-    digit++;
+    digit = 1;
     console.log("button");
   });
 });
 
 operatorButtons.forEach(button => {
   button.addEventListener('click', () => {
-    console.log(operator)
+    console.log(operator);
+    console.log(digit)
     if (operator == 0 && digit > 0) {
       calculator.addOperator(button.value);
       operator++;
     } 
-    else if (operator == 1 && digit > 1){
+    else if (operator == 1 && digit == 1){
       calculator.calculate();
       calculator.addOperator(button.value);   
-      digit--;
+      digit = 0;
     }
     console.log("op");
   });
