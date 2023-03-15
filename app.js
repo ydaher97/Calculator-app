@@ -21,11 +21,10 @@ numberButtons.forEach(button => {
 
 operatorButtons.forEach(button => {
   button.addEventListener('click', () => {
-    console.log(operator);
-    console.log(digit)
-    if (operator == 0 && digit > 0) {
+    if (operator == 0 && digit == 1) {
       calculator.addOperator(button.value);
-      operator++;
+      operator = 1;
+      digit = 0;
     } 
     else if (operator == 1 && digit == 1){
       calculator.calculate();
@@ -51,9 +50,14 @@ equalsButton.addEventListener('click', () => {
 backButton.addEventListener('click', () => {
   const display = calculatorDisplay.value;
   if ((display[display.length-1]).match(/\d/)) {
-    digit = 0;
+    if ((display[display.length-2].match(/\d/))) {
+      digit = 1;
+    } else {
+      digit = 0;
+    }
   } else {
     operator = 0;
+    digit = 1;
   }
     calculator.back();
   });
