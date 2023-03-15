@@ -4,75 +4,94 @@ export class Calculator {
     this.clear();
   }
 
-    back() {
-        this.input = this.input.slice(0, -1);
-        this.updateDisplay()
-    }
-    
-    clear() {
-      this.input = '';
-      this.operator = '';
-      this.result = '';
-      this.updateDisplay();
-    }
-    
-    updateDisplay() {
-      this.display.value = this.input;
-    }
-    
-    addToInput(value) {
-      this.input += value;
-      this.updateDisplay();
-    }
-    
-    addOperator(value) {
-      this.operator = value;
-      this.addToInput(this.operator);
-    }
-    
-    operate(operator, a, b) {
-      switch(operator) {
-        case '+':
-          return this.add(a, b);
-        case '-':
-          return this.subtract(a, b);
-        case '*':
-          return this.multiply(a, b);
-        case '/':
-          return this.divide(a, b);
-        default:
-          throw new Error("Invalid operator");
-      }
-    }
-    
-    // calculateLongExpression() {
-    //   let expression = this.input.split(/\d/);
-    //   let operators = [];
-    //   let values = this.input.split(/[-+*/]/);
-    //   let result = parseFloat(values[0]);
-    //   for (let op in expression) {
-    //     if (expression[op]) {
-    //       operators.push(expression[op]);
-    //     }
-    //   }
-    //   if (operators.length > 1) {
-    //     this.operator = operators[0];
-    //     this.calculate();
-    //   }
-    // }
+  back() {
+    this.input = this.input.slice(0, -1);
+    this.updateDisplay();
+  }
 
+  clear() {
+    this.input = "";
+    this.operator = "";
+    this.result = "";
+    this.updateDisplay();
+  }
+
+  updateDisplay() {
+    this.display.value = this.input;
+  }
+
+  addToInput(value) {
+    this.input += value;
+    this.updateDisplay();
+  }
+
+  addOperator(value) {
+    this.operator = value;
+    this.addToInput(this.operator);
+  }
+
+  operate(operator, a, b) {
+    switch (operator) {
+      case "+":
+        return this.add(a, b);
+      case "-":
+        return this.subtract(a, b);
+      case "*":
+        return this.multiply(a, b);
+      case "/":
+        return this.divide(a, b);
+      default:
+        throw new Error("Invalid operator");
+    }
+  }
+
+  // calculateLongExpression() {
+  //   let expression = this.input.split(/\d/);
+  //   let operators = [];
+  //   let values = this.input.split(/[-+*/]/);
+  //   let result = parseFloat(values[0]);
+  //   for (let op in expression) {
+  //     if (expression[op]) {
+  //       operators.push(expression[op]);
+  //     }
+  //   }
+  //   if (operators.length > 1) {
+  //     this.operator = operators[0];
+  //     this.calculate();
+  //   }
+  // }
+
+  // calculate() {
+  //   let values = this.input.split(/[-+*/]/);
+  //   let result = parseFloat(values[0]);
+
+  //   for (let i = 0; i < this.operator.length; i++) {
+  //     let op = this.operator[i];
+  //     let a = parseFloat(values[i]);
+  //     let b = parseFloat(values[i + 1]);
+  //     result = this.operate(op, result, b);
+  //   }
+
+  //   this.result = result;
+  //   this.input = this.result.toString();
+  //   this.operator = "";
+  //   this.updateDisplay();
+  // }
   calculate() {
     let values = this.input.split(/[-+*/]/);
     let result = parseFloat(values[0]);
 
-    for (let i = 0; i < this.operator.length; i++) {
-      let op = this.operator[i];
-      let a = parseFloat(values[i]);
-      let b = parseFloat(values[i + 1]);
-      result = this.operate(op, result, b);
+    for (let i = 0, j = 1; i < this.input.length; i++) {
+      if ("+-*/".includes(this.input[i])) {
+        let op = this.input[i];
+        let a = result;
+        let b = parseFloat(values[j]);
+        result = this.operate(op, a, b);
+        j++;
+      }
     }
 
-    this.result = result;
+    this.result = parseFloat(result.toFixed(15));
     this.input = this.result.toString();
     this.operator = "";
     this.updateDisplay();

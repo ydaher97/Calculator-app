@@ -19,19 +19,20 @@ numberButtons.forEach((button) => {
   });
 });
 
-operatorButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    if (operator == 0 && digit == 1) {
+operatorButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    if (operator === 0 && digit === 1) {
       calculator.addOperator(button.value);
       operator = 1;
       digit = 0;
-    } 
-    else if (operator == 1 && digit == 1){
+    } else if (operator === 1 && digit === 1) {
       calculator.calculate();
-      calculator.addOperator(button.value);   
+      calculator.addOperator(button.value);
       digit = 0;
+    } else if (operator === 1 && digit === 0) {
+      calculator.back();
+      calculator.addOperator(button.value);
     }
-    console.log("op");
   });
 });
 
@@ -42,22 +43,25 @@ clearButton.addEventListener("click", () => {
 });
 
 equalsButton.addEventListener("click", () => {
-  calculator.calculate();
-  operator = 0;
-  digit = 1;
-});
-
-backButton.addEventListener("click", () => {
-  const display = calculatorDisplay.value;
-  if ((display[display.length-1]).match(/\d/)) {
-    if ((display[display.length-2].match(/\d/))) {
-      digit = 1;
-    } else {
-      digit = 0;
-    }
-  } else {
+  if (operator == 1 && digit == 1) {
+    calculator.calculate();
     operator = 0;
     digit = 1;
   }
-    calculator.back();
-  });
+});
+
+backButton.addEventListener("click", () => {
+  calculator.back();
+  const display = calculatorDisplay.value;
+  if (display.length > 0) {
+    if (display[display.length - 1].match(/\d/)) {
+      digit = 1;
+    } else {
+      digit = 0;
+      operator = 0;
+    }
+  } else {
+    digit = 0;
+    operator = 0;
+  }
+});
