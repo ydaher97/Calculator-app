@@ -45,21 +45,6 @@ export class Calculator {
       }
     }
     
-    // calculateLongExpression() {
-    //   let expression = this.input.split(/\d/);
-    //   let operators = [];
-    //   let values = this.input.split(/[-+*/]/);
-    //   let result = parseFloat(values[0]);
-    //   for (let op in expression) {
-    //     if (expression[op]) {
-    //       operators.push(expression[op]);
-    //     }
-    //   }
-    //   if (operators.length > 1) {
-    //     this.operator = operators[0];
-    //     this.calculate();
-    //   }
-    // }
 
   calculate() {
     let values = this.input.split(/[-+*/]/);
