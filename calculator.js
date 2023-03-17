@@ -125,14 +125,15 @@ export class Calculator {
       this.storedDisplay = this.input;
       this.updateDisplay();
     }
-   
+
   }
 
   calculateNegative() {
     let values = this.input.split(/[-+*/]/);
     values.shift();
-    let nOperator = this.input.split(/\d/).join("")
+    let nOperator = this.input.split(/[\d.]/).join("")
     let op = nOperator[1];
+    console.log(nOperator)
     let a = 0 - parseFloat(values[0]);
     let b = parseFloat(values[1])
     console.log(op, a, b)
