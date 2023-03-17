@@ -133,10 +133,8 @@ export class Calculator {
     values.shift();
     let nOperator = this.input.split(/[\d.]/).join("")
     let op = nOperator[1];
-    console.log(nOperator)
     let a = 0 - parseFloat(values[0]);
     let b = parseFloat(values[1])
-    console.log(op, a, b)
     let result = this.operate(op, a, b);
     this.result = parseFloat(result.toFixed(15));
     this.input = this.result.toString();
