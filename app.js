@@ -24,9 +24,9 @@ numberButtons.forEach((button) => {
 
 decimalButton.addEventListener("click", () => {
   if (digit > 0 && decimal == 0) {
-  calculator.addToInput('.');
-  decimal = 1;
-}
+    calculator.addToInput(".");
+    decimal = 1;
+  }
 });
 
 operatorButtons.forEach((button) => {
@@ -37,16 +37,16 @@ operatorButtons.forEach((button) => {
       digit = 0;
       decimal = 0;
     } else if (operator === 1 && digit === 1) {
-      console.log('s')
+      console.log("s");
       calculator.calculate();
       calculator.addOperator(button.value);
       digit = 0;
       decimal = 0;
     } else if (operator === 1 && digit === 0) {
-      console.log('j')
+      console.log("j");
       calculator.back();
       calculator.addOperator(button.value);
-    } else if (button.value == '-' && operator == 0 && negativeOperator == 0) {
+    } else if (button.value == "-" && operator == 0 && negativeOperator == 0) {
       calculator.addOperator(button.value);
       negativeOperator = 1;
     }
@@ -89,8 +89,70 @@ backButton.addEventListener("click", () => {
 });
 
 //toggle theme
-const themeBtn = document.querySelector('.theme-btn')
-themeBtn.addEventListener('click',()=>{
-    let element = document.body;
-    element.classList.toggle('light-mode')
-})
+const themeBtn = document.querySelector(".theme-btn");
+themeBtn.addEventListener("click", () => {
+  let element = document.body;
+  element.classList.toggle("light-mode");
+});
+
+// Add keyboard support
+document.addEventListener("keydown", (event) => {
+  const key = event.key;
+
+  if (key.match(/[0-9]/)) {
+    calculator.addToInput(key);
+    digit = 1;
+  } else if (key.match(/[-+*/]/)) {
+    if (operator === 0 && digit === 1) {
+      calculator.addOperator(key);
+      operator = 1;
+      digit = 0;
+      decimal = 0;
+    } else if (operator === 1 && digit === 1) {
+      calculator.calculate();
+      calculator.addOperator(key);
+      digit = 0;
+      decimal = 0;
+    } else if (operator === 1 && digit === 0) {
+      calculator.back();
+      calculator.addOperator(key);
+    } else if (key == "-" && operator == 0 && negativeOperator == 0) {
+      calculator.addOperator(key);
+      negativeOperator = 1;
+    }
+  } else if (key === ".") {
+    if (digit > 0 && decimal == 0) {
+      calculator.addToInput(".");
+      decimal = 1;
+    }
+  } else if (key === "Enter") {
+    if (operator == 1 && digit == 1) {
+      calculator.calculate();
+      operator = 0;
+      negativeOperator = 0;
+      digit = 1;
+      decimal = 0;
+    }
+  } else if (key === "Backspace") {
+    calculator.back();
+    const display = calculatorDisplay.value;
+    if (display.length > 0) {
+      if (display[display.length - 1].match(/\d/)) {
+        digit = 1;
+      } else {
+        digit = 0;
+        operator = 0;
+        decimal = 0;
+      }
+    } else {
+      digit = 0;
+      operator = 0;
+      decimal = 0;
+    }
+  } else if (key === "Escape") {
+    digit = 0;
+    operator = 0;
+    decimal = 0;
+    calculator.clear();
+  }
+});
