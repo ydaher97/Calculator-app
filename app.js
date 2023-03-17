@@ -1,5 +1,6 @@
 import { Calculator } from "./calculator.js";
 let operator = 0;
+let negativeOperator = 0;
 let digit = 0;
 
 const calculatorDisplay = document.getElementById("calculator-display");
@@ -26,12 +27,17 @@ operatorButtons.forEach((button) => {
       operator = 1;
       digit = 0;
     } else if (operator === 1 && digit === 1) {
+      console.log('s')
       calculator.calculate();
       calculator.addOperator(button.value);
       digit = 0;
     } else if (operator === 1 && digit === 0) {
+      console.log('j')
       calculator.back();
       calculator.addOperator(button.value);
+    } else if (button.value == '-' && operator == 0 && negativeOperator == 0) {
+      calculator.addOperator(button.value);
+      negativeOperator = 1;
     }
   });
 });
@@ -39,6 +45,7 @@ operatorButtons.forEach((button) => {
 clearButton.addEventListener("click", () => {
   digit = 0;
   operator = 0;
+  negativeOperator = 0;
   calculator.clear();
 });
 
@@ -46,6 +53,7 @@ equalsButton.addEventListener("click", () => {
   if (operator == 1 && digit == 1) {
     calculator.calculate();
     operator = 0;
+    negativeOperator = 0;
     digit = 1;
   }
 });
@@ -63,6 +71,7 @@ backButton.addEventListener("click", () => {
   } else {
     digit = 0;
     operator = 0;
+    negativeOperator = 0;
   }
 });
 
