@@ -37,13 +37,11 @@ operatorButtons.forEach((button) => {
       digit = 0;
       decimal = 0;
     } else if (operator === 1 && digit === 1) {
-      console.log("s");
       calculator.calculate();
       calculator.addOperator(button.value);
       digit = 0;
       decimal = 0;
     } else if (operator === 1 && digit === 0) {
-      console.log("j");
       calculator.back();
       calculator.addOperator(button.value);
     } else if (button.value == "-" && operator == 0 && negativeOperator == 0) {
