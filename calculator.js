@@ -38,11 +38,13 @@ export class Calculator {
         return this.subtract(a, b);
       case "*":
         return this.multiply(a, b);
-      case "/":
+      case "/": 
         return this.divide(a, b);
-      default:
+            default:
         throw new Error("Invalid operator");
     }
+
+  
   }
 
   // calculateLongExpression() {
@@ -111,7 +113,11 @@ export class Calculator {
 
   divide(a, b) {
     if (b === 0) {
-      throw new Error("Division by zero");
+    
+    //  throw new Error("Division by zero");
+     alert ("You can't divide by zero")
+      return 0;
+      
     } else {
       return a / b;
     }
