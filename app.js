@@ -96,7 +96,6 @@ themeBtn.addEventListener("click", () => {
 // Add keyboard support
 document.addEventListener("keydown", (event) => {
   const key = event.key;
-  console.log(key)
   if (key.match(/[0-9]/) && !key.match(/F/)) {
     calculator.addToInput(key);
     digit = 1;
@@ -141,16 +140,19 @@ document.addEventListener("keydown", (event) => {
         digit = 0;
         operator = 0;
         decimal = 0;
+        negativeOperator = 0;
       }
     } else {
       digit = 0;
       operator = 0;
       decimal = 0;
+      negativeOperator = 0;
     }
   } else if (key === "Escape") {
     digit = 0;
     operator = 0;
     decimal = 0;
+    negativeOperator = 0;
     calculator.clear();
   }
 });
