@@ -148,7 +148,7 @@ document.addEventListener("keydown", (event) => {
       decimal = 0;
       negativeOperator = 0;
     }
-  } else if (key === "Escape") {
+  } else if (key === "Escape" || key == "c".toLocaleLowerCase()) {
     digit = 0;
     operator = 0;
     decimal = 0;
