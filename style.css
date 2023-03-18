@@ -21,6 +21,7 @@
     --color-button-hover: cyan;
     --color-operator-hover: lightslategrey;
     --color-decimalBack-hover: darkblue;
+    --color-equals: #8ab4f8;
   ;
   }
   
@@ -42,6 +43,7 @@
     --color-buttons-value: cyan;
     --color-button-hover: #A020F0;
     --color-operator-hover: brown;
+    --color-equals: goldenrod;
 
   }
 
@@ -200,12 +202,12 @@ button.back {
 /* Style equals button */
 .equals {
   color: #fff;
-  background-color: #8ab4f8;
+  background-color: var(--color-equals);
 }
 
 .equals:hover {
   color: var(--color-white);
-  background-color: blue;
+  background-color: blueviolet;
 }
 
 /* Style for decimal button */
