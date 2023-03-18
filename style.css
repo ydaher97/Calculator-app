@@ -1,19 +1,26 @@
 /* Default styles for the calculator */
 
 :root {
-    --color-primary: rgb(41, 41, 48);
+    --color-primary: #0a082c;
     --color-secondary: #27ae60;
     --color-white: #FFFFFF;
     --color-black: #000;
-    --color-grey0: #0a082c;
+    --color-grey0: rgb(41, 41, 48);
     --color-gray1: #dbe1e8;
     --color-gray2: #b2becd;
     --color-gray3: #6c7983;
     --color-green: #1b661d;
     --color-gray5: #2a2e35;
     --color-geay6: #12181b;
+    --color-buttons: #f1f1f1;
+    --color-operators: #d3cfcf;
+    --color-operators-bc: seagreen;
+    --color-buttons-value: #000;
     --br-sm-2: 14px;
-    --box-shadow1: 0 3px 15x rgba(0,0,0,.3) 
+    --box-shadow1: 0 3px 15x rgba(0,0,0,.3) ;
+    --color-button-hover: grey;
+    --color-operator-hover: blue;
+    --color-decimalBack-hover: darkblue;
   ;
   }
   
@@ -22,13 +29,17 @@
     --color-secondary: #2a99aa;
     --color-white: #454e56;
     --color-black: #000;
-    --color-grey0: #827f7f;
+    --color-grey0: lightblue;
     --color-gray1: #6c7983;
     --color-gray2: #6c7983;
     --color-gray3: #6c7983;
     --color-green: #463998 ;
     --color-gray5: #f8f8f8;
     --color-red: #cc1b1b;
+    --color-operators-bc: rgb(41, 41, 48);
+    --color-buttons: #00008B;
+    --color-buttons-value: cyan;
+    --color-button-hover: white;
   }
 
   .theme-btn {
@@ -136,35 +147,35 @@ button {
 
 /* Style for Back button*/
 button.back {
-  color: var(--color-gray1);
-  background-color: #333;
+  color: #d3cfcf;
+  background-color: darkslateblue;
 }
 
 .back:hover {
   color: #d3cfcf;
-  background-color: #33333354;
+  background-color: var(--color-decimalBack-hover);
 }
 
 /* Style number buttons */
 .number {
-  color: #000;
-  background-color: #f1f1f1;
+  color: var(--color-buttons-value);
+  background-color: var(--color-buttons);
 }
 
 .number:hover {
   color: #000;
-  background-color: #d1c3c3b2;
+  background-color: var(--color-button-hover);
 }
 
 /* Style operator buttons */
 .operator {
-  color: #d3cfcf;
-  background-color: #333;
+  color: var(--color-operators);
+  background-color: var(--color-operators-bc);
 }
 
 .operator:hover {
   color: #d3cfcf;
-  background-color: #33333354;
+  background-color: var(--color-operator-hover);
 }
 
 /* Style clear button */
@@ -180,24 +191,24 @@ button.back {
 
 /* Style equals button */
 .equals {
-  color: var(--color-white);
-  background-color: var(--color-secondary);
+  color: #fff;
+  background-color: #f44336;
 }
 
 .equals:hover {
   color: var(--color-white);
-  background-color: var(--color-green);
+  background-color: #f4433677;
 }
 
 /* Style for decimal button */
 .decimal {
-  background-color: var(--color-white);;
-  color: var(--color-grey0);
+  color: #d3cfcf;
+  background-color: darkslateblue;
 }
 
 .decimal:hover {
-  background-color: #d1c3c3b2;
-  color: var(--color-geay6);
+  color: #d3cfcf;
+  background-color: var(--color-decimalBack-hover);
 }
 
 /* Styles for small screens */
