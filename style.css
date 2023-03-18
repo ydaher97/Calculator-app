@@ -17,7 +17,7 @@
     --color-operators-bc: seagreen;
     --color-buttons-value: #000;
     --br-sm-2: 14px;
-    --box-shadow1: 0 3px 15x rgba(0,0,0,.3) ;
+    --box-shadow1: white;
     --color-button-hover: cyan;
     --color-operator-hover: lightslategrey;
     --color-decimalBack-hover: darkblue;
@@ -37,6 +37,7 @@
     --color-gray5: #f8f8f8;
     --color-red: #cc1b1b;
     --color-operators-bc: rgb(41, 41, 48);
+    --box-shadow1: rgba(0,0,0,.3);
     --color-buttons: #00008B;
     --color-buttons-value: cyan;
     --color-button-hover: white;
@@ -67,8 +68,8 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -webkit-box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
-            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 3px 15px var(--box-shadow1);
+            box-shadow: 0 3px 15px var(--box-shadow1);
     -webkit-transition: all .1s ease-in-out;
     transition: all .1s ease-in-out;
   }
