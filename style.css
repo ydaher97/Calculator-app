@@ -40,6 +40,8 @@
     --color-buttons: #00008B;
     --color-buttons-value: cyan;
     --color-button-hover: white;
+    --color-operator-hover: brown;
+
   }
 
   .theme-btn {
