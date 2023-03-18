@@ -39,6 +39,9 @@ export class Calculator {
       this.newExpr = true;
       this.calculated = false;
       this.updateDisplay();
+    } else if (this.input === "0") {
+      this.input = value;
+      this.updateDisplay();
     } else {
       this.input += value;
       this.updateDisplay();
