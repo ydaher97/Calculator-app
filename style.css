@@ -44,6 +44,11 @@
 
   }
 
+  .emptyNumbers {
+    visibility: hidden;
+    width: 40% !important;
+  }
+
   .theme-btn {
     top: 5%;
     right: 3%;
