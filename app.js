@@ -123,6 +123,7 @@ document.addEventListener("keydown", (event) => {
       decimal = 1;
     }
   } else if (key === "Enter") {
+    document.activeElement.blur();
     if (operator == 1 && digit == 1) {
       calculator.calculate();
       operator = 0;
