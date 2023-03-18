@@ -96,8 +96,8 @@ themeBtn.addEventListener("click", () => {
 // Add keyboard support
 document.addEventListener("keydown", (event) => {
   const key = event.key;
-
-  if (key.match(/[0-9]/)) {
+  console.log(key)
+  if (key.match(/[0-9]/) && !key.match(/F/)) {
     calculator.addToInput(key);
     digit = 1;
   } else if (key.match(/[-+*/]/)) {
