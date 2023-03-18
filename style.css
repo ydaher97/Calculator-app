@@ -18,8 +18,8 @@
     --color-buttons-value: #000;
     --br-sm-2: 14px;
     --box-shadow1: 0 3px 15x rgba(0,0,0,.3) ;
-    --color-button-hover: grey;
-    --color-operator-hover: blue;
+    --color-button-hover: cyan;
+    --color-operator-hover: lightslategrey;
     --color-decimalBack-hover: darkblue;
   ;
   }
@@ -199,12 +199,12 @@ button.back {
 /* Style equals button */
 .equals {
   color: #fff;
-  background-color: #f44336;
+  background-color: #8ab4f8;
 }
 
 .equals:hover {
   color: var(--color-white);
-  background-color: #f4433677;
+  background-color: blue;
 }
 
 /* Style for decimal button */
