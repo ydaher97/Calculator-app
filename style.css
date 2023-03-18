@@ -217,6 +217,6 @@ button.back {
 /* Styles for large screens */
 @media screen and (min-width: 769px) {
   button {
-    width: 25%;
+    width: 20%;
   }
 }
